@@ -84,7 +84,7 @@ public class Programa {
         Collection col = null; // Colección
         String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/La vostra col·leccio"; // URI colección
         String usu = "admin"; // Usuario
-        String usuPwd = "El vostre password"; // Clave
+        String usuPwd = "admin"; // Clave
 
         try {
             Class cl = Class.forName(driver); // Cargar del driver
