@@ -1,10 +1,1 @@
-<?xml version="1.0" ?>
-<cataleg>
-    <cd id="1">
-        <titol>Tinta roja</titol>
-        <artista>Andres Calamaro</artista>
-        <pais>Argentina</pais>
-        <preu>10.90</preu>
-        <any>2006</any>
-    </cd>
-</cataleg>
+<?xml version="1.0" ?><cataleg><cd id="1"><titol>Tinta roja</titol><artista>Andres Calamaro</artista><pais>Argentina</pais><preu>10.90</preu><any>2006</any></cd></cataleg>

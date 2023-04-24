@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -11,14 +12,44 @@ import org.xmldb.api.base.*;
 import org.xmldb.api.modules.*;
 
 public class Programa {
-    public static void main(String[] args) {
-        
-        try {
-            crearXML();
-            conectarExistDB();            
-        } catch (XMLDBException e) {
-            e.printStackTrace();
+    public static void main(String[] args) throws XMLDBException {
+
+        mostrarMenu();
+    }
+
+    private static void mostrarMenu() throws XMLDBException {
+        Scanner teclado = new Scanner(System.in);
+
+        int opcion;
+        boolean opcionSeleccionada = false;
+
+        while (!opcionSeleccionada) {
+            // Texto
+            System.out.println("Selecciona una opción:");
+            System.out.println("| 1 - Crear Archivo XML |");
+            System.out.println("| 2 - Crear Colección |");
+            
+
+            opcion = teclado.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    crearXML();
+                    break;
+
+                case 2:
+                    opcionSeleccionada = true;
+                    System.out.println("Nombre de la Colección a crear:");
+                    teclado.nextLine();
+                    String nombreColeccion = teclado.nextLine();
+                    crearColeccion(nombreColeccion);
+                    break;
+
+                default:
+                    break;
+            }
         }
+
     }
 
     /**
@@ -79,44 +110,41 @@ public class Programa {
         }
     }
 
-    public static void conectarExistDB() throws XMLDBException {
-        String driver = "org.exist.xmldb.DatabaseImpl"; // Driver para eXist
+    public static void crearColeccion(String nombreColeccion) throws XMLDBException {
+        String driver = "org.exist.xmldb.DatabaseImpl"; //Driver para eXist
         Collection col = null; // Colección
-        String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/La vostra col·leccio"; // URI colección
-        String usu = "admin"; // Usuario
-        String usuPwd = "admin"; // Clave
-
+        String URI="xmldb:exist://localhost:8080/exist/xmlrpc/db/"; //URI colección
+        String usu="admin"; //Usuario
+        String usuPwd="Admin1234"; //Clave
+        
         try {
-            Class cl = Class.forName(driver); // Cargar del driver
-            Database database = (Database) cl.newInstance(); // Instancia de la BD
-            DatabaseManager.registerDatabase(database); // Registro del driver
-
+            Class cl = Class.forName(driver); //Cargar del driver
+            Database database = (Database) cl.newInstance(); //Instancia de la BD 
+            DatabaseManager.registerDatabase(database); //Registro del driver
+            
         } catch (Exception e) {
             System.out.println("Error al inicializar la BD eXist");
+            e.printStackTrace(); 
+        }
+        
+        col = DatabaseManager.getCollection(URI, usu, usuPwd); //Connexi� amb la nostra col�lecci�
+       
+        if(col == null) {
+            System.out.println(" *** LA COLECCION NO EXISTE. ***");
+            return;
+        }
+    
+        // Crear colección con el nombre dado
+        try {
+            CollectionManagementService mgtService = (CollectionManagementService) col.getService("CollectionManagementService", "1.0");
+            mgtService.createCollection(nombreColeccion);
+            System.out.println("Colección creada correctamente");
+        } catch (XMLDBException e) {
+            System.out.println("Error al crear la colección " + nombreColeccion);
             e.printStackTrace();
         }
-
-        col = DatabaseManager.getCollection(URI, usu, usuPwd); // Carreguem la nostra col.lecció
-
-        if (col == null)
-            System.out.println(" *** LA COLECCION NO EXISTE. ***");
-
-        XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
-
-        // Ara farem i executarem la consulta xquery sobre el nostre fitxer
-        ResourceSet result = servicio.query("for $a in //title/text() return $a");
-
-        // recorrer los datos del recurso.
-        ResourceIterator i;
-        i = result.getIterator();
-        if (!i.hasMoreResources())
-            System.out.println(" LA CONSULTA NO DEVUELVE NADA.");
-
-        while (i.hasMoreResources()) {
-            Resource r = i.nextResource();
-            System.out.println((String) r.getContent());
-        }
-        col.close(); // Cerramos coleccion
+        
+        col.close(); //Cerramos coleccion
     }
-
+    
 }

@@ -9,8 +9,8 @@ public class ExeConecDB {
 	public static void main(String[] args) throws XMLDBException {
 		
 		String driver = "org.exist.xmldb.DatabaseImpl"; //Driver para eXist
-		Collection col = null; // Colección
-		String URI="xmldb:exist://localhost:8080/exist/xmlrpc/db/"; //URI colección
+		Collection col = null; // Colecciï¿½n
+		String URI="xmldb:exist://localhost:8080/exist/xmlrpc/db/"; //URI colecciï¿½n
 		String usu="XXXXX"; //Usuario
 		String usuPwd="XXXXXXX"; //Clave
 		
@@ -23,7 +23,7 @@ public class ExeConecDB {
 				System.out.println("Error al inicializar la BD eXist");
 				e.printStackTrace(); }
 		
-	    col = DatabaseManager.getCollection(URI, usu, usuPwd); //Connexió amb la nostra col·lecció
+	    col = DatabaseManager.getCollection(URI, usu, usuPwd); //Connexiï¿½ amb la nostra colï¿½lecciï¿½
 	   
 		if(col == null)
 			System.out.println(" *** LA COLECCION NO EXISTE. ***");
@@ -41,10 +41,10 @@ public class ExeConecDB {
 		if (!i.hasMoreResources())
 			System.out.println(" LA CONSULTA NO DEVUELVE NADA."); 
 		
-		while (i.hasMoreResources()) {
-			Resource r = i.nextResource();
-			System.out.println((String) r.getContent());
-		}
+		// while (i.hasMoreResources()) {
+		// 	Resource r = i.nextResource();
+		// 	System.out.println((String) r.getContent());
+		// }
 		col.close(); //Cerramos coleccion
 	}
 	// 
