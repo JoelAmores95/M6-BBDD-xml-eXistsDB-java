@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "librerias/exist.jar",
+        "librerias/exist-optional.jar",
+        "librerias/log4j-1.2.15.jar",
+        "librerias/ws-commons-util-1.0.2.jar",
+        "librerias/xml-apis-1.3.04.jar",
+        "librerias/xmldb.jar",
+        "librerias/xmlrpc-client-3.1.1.jar",
+        "librerias/xmlrpc-common-3.1.jar"
+    ]
+}
