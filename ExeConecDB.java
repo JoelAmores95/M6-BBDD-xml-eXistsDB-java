@@ -6,6 +6,18 @@ import org.xmldb.api.modules.*;
 
 public class ExeConecDB {
 
+
+
+
+	
+
+	// SOLO PARA CONSULTAR, NO EDITAR
+
+
+
+
+
+
 	public static void main(String[] args) throws XMLDBException {
 		
 		String driver = "org.exist.xmldb.DatabaseImpl"; //Driver para eXist
