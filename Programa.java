@@ -36,28 +36,4 @@ public class Programa {
         MostrarMenu.mostrarMenu();
     }
 
-    
-    // /**
-    //  * Paso 8: Mostrar registros antiguos a una fecha
-    //  * 
-    //  * @throws XMLDBException
-    //  */
-    // private static void mostrarRegistrosAntiguos() throws XMLDBException {
-    //     try {
-    //         Class cl = Class.forName(driver); // Cargar del driver
-    //         Database database = (Database) cl.newInstance(); // Instancia de la BD
-    //         DatabaseManager.registerDatabase(database); // Registro del driver
-    //     } catch (Exception e) {
-    //         System.out.println("Error al inicializar la BD eXist");
-    //         e.printStackTrace();
-    //     }
-
-    //     col = DatabaseManager.getCollection(URI, usu, usuPwd); // Conexión con nuestra colección
-
-    //     if (col == null) {
-    //         System.out.println(" *** LA COLECCIÓN NO EXISTE. ***");
-    //         return;
-    //     }
-    // }
-
 }

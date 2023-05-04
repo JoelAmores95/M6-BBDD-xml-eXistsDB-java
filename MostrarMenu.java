@@ -10,7 +10,7 @@ public class MostrarMenu {
         boolean opcionSeleccionada = false;
 
         while (!opcionSeleccionada) {
-            // Texto
+            
             System.out.println("Selecciona una opción:");
             System.out.println("| 1 - Crear Archivo XML (2p)    |");
             System.out.println("| 2 - Crear Colección (1p)      |");
@@ -19,7 +19,7 @@ public class MostrarMenu {
             System.out.println("| 5 - Modificar Precio (1p)     |");
             System.out.println("| 6 - Mostrar Cantidad CD (1p)  |");
             System.out.println("| 7 - Borrar CD (1p)            |");
-            // System.out.println("| 8 - Mostrar registros anteriores a año (1p)  |");
+            System.out.println("| 8 - Mostrar registros anteriores a año (1p)  |");
 
             opcion = teclado.nextInt();
             teclado.nextLine();
@@ -28,18 +28,15 @@ public class MostrarMenu {
                 case 1:
                     Opcion1CrearXML.crearXML();
                     break;
-
                 case 2:
                     Opcion2CrearColeccion.crearColeccion();
                     break;
-
                 case 3:
                     Opcion3SubirFichero.pujarDocument();
                     break;
                 case 4:
                     Opcion4InsertarElemento.insertarElemento();
                     break;
-
                 case 5:
                     System.out.println("Nombre del CD:");
                     String nombreCD = teclado.nextLine();
@@ -47,16 +44,15 @@ public class MostrarMenu {
                     double precioNuevo = teclado.nextDouble();
                     Opcion5ModificarPrecio.modificarPrecio(nombreCD, precioNuevo);
                     break;
-
                 case 6:
                     Opcion6MostrarCantidad.mostrarCantidadCD();
                     break;
                 case 7:
                     Opcion7Borrar.borrarCD();
                     break;
-                // case 8:
-                //     mostrarRegistrosAntiguos();
-                //     break;
+                case 8:
+                    Opcion8Antiguos.mostrarRegistrosAntiguos();
+                    break;
                 default:
                     break;
             }

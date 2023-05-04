@@ -22,7 +22,7 @@ public class Opcion6MostrarCantidad {
         }
 
         XPathQueryService servicio = (XPathQueryService) Programa.col.getService("XPathQueryService", "1.0");
-        ResourceSet result = servicio.query("count (//cd)");
+        ResourceSet result = servicio.query(" let $cantCD := count (//cd) return <NumTotalCDs>{$cantCD}</NumTotalCDs>");
 
         // recorrer les dades del recurs.
         ResourceIterator i;
