@@ -4,12 +4,12 @@ import org.xmldb.api.*;
 import org.xmldb.api.base.*;
 
 public class Programa {
-    
+
     public static String nombreColeccion;
     public static String nombreArchivo;
     public static String driver = "org.exist.xmldb.DatabaseImpl"; // Driver para eXist
     public static Collection col = null; // Colección
-    public static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/"; // URI colección
+    public static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/Proyecto"; // URI colección
     public static String usu = "admin"; // Usuario
     public static String usuPwd = "Admin1234"; // Clave
 
@@ -36,53 +36,7 @@ public class Programa {
         MostrarMenu.mostrarMenu();
     }
 
-    // /**
-    //  * Paso 3: Subir fichero a colección
-    //  */
-    // public static void pujarDocument(String nomColleccio, String nomFitxer) throws XMLDBException {
-    //     try {
-    //         Class cl = Class.forName(driver); // Cargar del driver
-    //         Database database = (Database) cl.newInstance(); // Instancia de la BD
-    //         DatabaseManager.registerDatabase(database); // Registro del driver
-    //     } catch (Exception e) {
-    //         System.out.println("Error al inicializar la BD eXist");
-    //         e.printStackTrace();
-    //     }
-
-    //     col = (Collection) DatabaseManager.getCollection(URI + nomColleccio, usu, usuPwd); // Conexión con nuestra colección
-
-    //     if (col == null) {
-    //         System.out.println(" *** LA COLECCIÓN NO EXISTE. ***");
-    //         return;
-    //     }
-
-    //     // Carga del fichero
-    //     File file = new File(nomFitxer);
-    //     if (!file.exists()) {
-    //         System.out.println("El fichero no existe");
-    //         return;
-    //     }
-    //     String filename = file.getName();
-    //     InputStream inputStream;
-    //     try {
-    //         inputStream = new FileInputStream(file);
-    //     } catch (FileNotFoundException e) {
-    //         System.out.println("No se pudo abrir el fichero: " + e.getMessage());
-    //         return;
-    //     }
-
-    //     // Creación del recurso
-    //     Resource res = col.createResource(filename, "XMLResource");
-    //     res.setContent(inputStream);
-
-    //     // Almacenamiento del recurso en la colección
-    //     col.storeResource(res);
-
-    //     // Cierre de la colección
-    //     col.close();
-    //     System.out.println("Fichero " + nomFitxer + " subido correctamente a " + nomColleccio);
-    // }
-
+   
     // /**
     //  * Paso 4: Insertar Elemento
     //  * 

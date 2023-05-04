@@ -33,13 +33,9 @@ public class MostrarMenu {
                     Opcion2CrearColeccion.crearColeccion();
                     break;
 
-                // case 3:
-                //     System.out.println("Nombre de la colección:");
-                //     nombreColeccion = teclado.nextLine();
-                //     System.out.println("Nombre de archivo:");
-                //     nombreArchivo = teclado.nextLine();
-                //     pujarDocument(nombreColeccion, nombreArchivo);
-                //     break;
+                case 3:
+                    Opcion3SubirFichero.pujarDocument();
+                    break;
                 // case 4:
                 //     insertarElemento();
                 //     break;
