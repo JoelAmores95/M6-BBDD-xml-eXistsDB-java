@@ -16,7 +16,7 @@ public class MostrarMenu {
             System.out.println("| 2 - Crear Colección (1p)      |");
             System.out.println("| 3 - Subir Archivo (1p)        |");
             System.out.println("| 4 - Insertar elemento (2p)    NO FUNCIONA|");
-            // System.out.println("| 5 - Modificar Precio (1p)     |");
+            System.out.println("| 5 - Modificar Precio (1p)     |");
             // System.out.println("| 6 - Mostrar Cantidad CD (1p)  |");
             // System.out.println("| 7 - Borrar CD (1p)            |");
             // System.out.println("| 8 - Mostrar registros anteriores a año (1p)  |");
@@ -40,13 +40,13 @@ public class MostrarMenu {
                     Opcion4InsertarElemento.insertarElemento();
                     break;
 
-                // case 5:
-                //     System.out.println("Nombre del CD:");
-                //     String nombreCD = teclado.nextLine();
-                //     System.out.println("Nuevo precio:");
-                //     double precioNuevo = teclado.nextDouble();
-                //     modificarPrecio(nombreCD, precioNuevo);
-                //     break;
+                case 5:
+                    System.out.println("Nombre del CD:");
+                    String nombreCD = teclado.nextLine();
+                    System.out.println("Nuevo precio:");
+                    double precioNuevo = teclado.nextDouble();
+                    Opcion5ModificarPrecio.modificarPrecio(nombreCD, precioNuevo);
+                    break;
                 // case 6:
                 //     mostrarCantidadCD();
                 //     break;

@@ -74,49 +74,7 @@ public class Programa {
     //     col.close(); // Cerramos coleccion
     // }
 
-    // /**
-    //  * Paso 5: Modificar Precio
-    //  * 
-    //  * @throws XMLDBException
-    //  */
-    // private static void modificarPrecio(String titulo, double nuevoPrecio) throws XMLDBException {
-    //     try {
-    //         Class cl = Class.forName(driver); // Cargar del driver
-    //         Database database = (Database) cl.newInstance(); // Instancia de la BD
-    //         DatabaseManager.registerDatabase(database); // Registro del driver
-    //     } catch (Exception e) {
-    //         System.out.println("Error al inicializar la BD eXist");
-    //         e.printStackTrace();
-    //     }
-
-    //     col = DatabaseManager.getCollection(URI, usu, usuPwd); // Conexión con nuestra colección
-
-    //     if (col == null) {
-    //         System.out.println(" *** LA COLECCIÓN NO EXISTE. ***");
-    //         return;
-    //     }
-
-    //     String xpath = "//CD[titulo='" + titulo + "']/precio";
-    //     XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
-    //     ResourceSet result = servicio.query(xpath);
-
-    //     ResourceIterator i = result.getIterator();
-    //     if (!i.hasMoreResources()) {
-    //         System.out.println("No se encontró ningún CD con el título: " + titulo);
-    //         return;
-    //     }
-
-    //     Resource r = i.nextResource();
-    //     String xml = (String) r.getContent();
-    //     String updatedXml = xml.replaceAll("<precio>.*</precio>", "<precio>" + nuevoPrecio + "</precio>");
-
-    //     r.setContent(updatedXml);
-    //     col.storeResource(r);
-
-    //     col.close(); // Cerramos coleccion
-    //     System.out.println("El precio del CD con título '" + titulo + "' se ha modificado a " + nuevoPrecio);
-    // }
-
+    
     // /**
     //  * Paso 6: Mostrar Cantidad de CD
     //  * 
