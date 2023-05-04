@@ -9,7 +9,7 @@ public class Programa {
     public static String nombreArchivo;
     public static String driver = "org.exist.xmldb.DatabaseImpl"; // Driver para eXist
     public static Collection col = null; // Colección
-    public static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/Proyecto"; // URI colección
+    public static String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/"; // URI colección
     public static String usu = "admin"; // Usuario
     public static String usuPwd = "Admin1234"; // Clave
 

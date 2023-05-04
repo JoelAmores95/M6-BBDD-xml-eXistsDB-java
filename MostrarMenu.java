@@ -15,7 +15,7 @@ public class MostrarMenu {
             System.out.println("| 1 - Crear Archivo XML (2p)    |");
             System.out.println("| 2 - Crear Colección (1p)      |");
             System.out.println("| 3 - Subir Archivo (1p)        |");
-            // System.out.println("| 4 - Insertar elemento (2p)   MANU |");
+            System.out.println("| 4 - Insertar elemento (2p)    NO FUNCIONA|");
             // System.out.println("| 5 - Modificar Precio (1p)     |");
             // System.out.println("| 6 - Mostrar Cantidad CD (1p)  |");
             // System.out.println("| 7 - Borrar CD (1p)            |");
@@ -36,9 +36,9 @@ public class MostrarMenu {
                 case 3:
                     Opcion3SubirFichero.pujarDocument();
                     break;
-                // case 4:
-                //     insertarElemento();
-                //     break;
+                case 4:
+                    Opcion4InsertarElemento.insertarElemento();
+                    break;
 
                 // case 5:
                 //     System.out.println("Nombre del CD:");
